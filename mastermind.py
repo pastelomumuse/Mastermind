@@ -17,6 +17,7 @@ def generer_combinaison(longueur_combinaison, etendue_combinaison):
 
 
 def recuperer_combinaison_joueur(longueur_combinaison):
+    '''Récupère la combinaison du joueur'''
     while True:
         try:
             print('Entrez vos chiffres séparés par des espaces')
@@ -35,6 +36,7 @@ def recuperer_combinaison_joueur(longueur_combinaison):
 
 
 def verification_placement(combinaison_joueur, solution):
+    '''Vérifie la concordance des combinaisons'''
     bien_places = 0
     mal_places = 0
     # Création de listes intermédiaires pour en retirer les bien placés
@@ -57,21 +59,10 @@ def verification_placement(combinaison_joueur, solution):
         except:
             pass
     return (bien_places, mal_places)
-
-
-def test():
-    longueur_combinaison = 5
-    etendue_combinaison = 10
-    solution = generer_combinaison(longueur_combinaison, etendue_combinaison)
-    print(solution)
-    combinaison_joueur = recuperer_combinaison_joueur(longueur_combinaison)
-    print(combinaison_joueur)
-    bien_places, mal_places = verification_placement(combinaison_joueur,
-                                                      solution)
-    print('Vous avez bien placé %d nombre(s) et mal placé %d' % (bien_places, mal_places))
     
 
 def jouer():
+    '''Execute le programme en ligne de commandes'''
     print('Combien voulez-vous avoir de chiffres à trouver ?')
     longueur_combinaison = int(input('>'))
     print('Quelle étendue de chiffres voulez-vous ?')
@@ -87,8 +78,6 @@ def jouer():
         print('Bravo ! Vous avez gagné !')
         print('Voulez-vous rejouer ? 0 pour non et n\'importe quoi d\'autre pour oui.')
         play = input('>')
-
-
 
 
 jouer()
