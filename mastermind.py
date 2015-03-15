@@ -27,7 +27,8 @@ def recuperer_combinaison_joueur(longueur_combinaison):
             if difference_longueur:
                 print('''Votre combinaison ne fait pas la même longueur '''
                       '''que la solution.''')
-                print('Il y a %d chiffre(s) %s'  % (abs(difference_longueur), 'manquant(s).' if difference_longueur > 0 else 'en trop.'))
+                print('Il y a %d chiffre(s) %s' % (abs(difference_longueur),
+                      'manquant(s).' if difference_longueur > 0 else 'en trop.'))
             else:
                 break
         except:
@@ -51,7 +52,7 @@ def verification_placement(combinaison_joueur, solution):
 
     solution = inter_sol.copy()
     combinaison_joueur = inter_comb.copy()
-    #Compte les mal placés
+    # Compte les mal placés
     for i in inter_comb:
         try:
             inter_sol.remove(i)
@@ -59,7 +60,7 @@ def verification_placement(combinaison_joueur, solution):
         except:
             pass
     return (bien_places, mal_places)
-    
+
 
 def jouer():
     '''Execute le programme en ligne de commandes'''
@@ -69,14 +70,18 @@ def jouer():
     etendue_combinaison = int(input('>'))
     play = True
     while play:
-        solution = generer_combinaison(longueur_combinaison, etendue_combinaison)
+        solution = generer_combinaison(longueur_combinaison,
+                                       etendue_combinaison)
         bien_places = 0
         while bien_places != longueur_combinaison:
             combinaison_joueur = recuperer_combinaison_joueur(longueur_combinaison)
-            bien_places, mal_places = verification_placement(combinaison_joueur, solution)
-            print('Vous avez bien placé %d nombre(s) et mal placé %d nombres.' % (bien_places, mal_places))
+            bien_places, mal_places = verification_placement(combinaison_joueur,
+                                                             solution)
+            print('Vous avez bien placé %d nombre(s) et mal placé %d nombres.'
+                  % (bien_places, mal_places))
         print('Bravo ! Vous avez gagné !')
-        print('Voulez-vous rejouer ? 0 pour non et n\'importe quoi d\'autre pour oui.')
+        print('Voulez-vous rejouer ? 0 pour non '
+              'et n\'importe quoi d\'autre pour oui.')
         play = input('>')
 
 
