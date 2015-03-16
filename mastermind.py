@@ -64,12 +64,12 @@ def verification_placement(combinaison_joueur, solution):
 
 def jouer():
     '''Execute le programme en ligne de commandes'''
-    print('Combien voulez-vous avoir de chiffres à trouver ?')
-    longueur_combinaison = int(input('>'))
-    print('Quelle étendue de chiffres voulez-vous ?')
-    etendue_combinaison = int(input('>'))
     play = True
     while play:
+        print('Combien voulez-vous avoir de chiffres à trouver ?')
+        longueur_combinaison = int(input('>'))
+        print('Quelle étendue de chiffres voulez-vous ?')
+        etendue_combinaison = int(input('>'))
         solution = generer_combinaison(longueur_combinaison,
                                        etendue_combinaison)
         bien_places = 0
