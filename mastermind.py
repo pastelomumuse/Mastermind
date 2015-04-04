@@ -5,7 +5,6 @@ Mastermind en Python
 """
 
 import random
-#import pdb
 
 
 def generer_combinaison(longueur_combinaison, etendue_combinaison):
